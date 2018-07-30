@@ -7,7 +7,7 @@ class ofApp : public ofBaseApp{
 public:
   int n = 0;
   int c = 10;
-  
+  int diff = 1;
   
   void setup();
   void update();
@@ -24,5 +24,7 @@ public:
   void windowResized(int w, int h);
   void dragEvent(ofDragInfo dragInfo);
   void gotMessage(ofMessage msg);
+  
+  void renderBoxes(int n);
 		
 };

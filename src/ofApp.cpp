@@ -14,35 +14,28 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-  ofDrawBitmapString(ofToString(mouseX) + " – " + ofToString(mouseY), 20, 20);
-  
   ofBackground(0, 0, 0);
   ofNoFill();
+  
+  ofDrawBitmapString(ofToString(mouseX) + " – " + ofToString(mouseY), 20, 20);
+  ofDrawBitmapString(ofToString(n), 80, 20);
 
   ofSetLineWidth(3);
   
   ofTranslate(ofGetWidth() / 2,  ofGetHeight() / 2);
   
-  float time = ofGetElapsedTimef();
-  float side = 10;
+
+
+  int max = 200;
   
-  for (int i = 0; i < n; ++i) {
-    float a = i * 137.5;
-    float r = c * sqrt(i);
-    float x = r * cos(a);
-    float y = r * sin(a);
-    
-    int red = i;
-    ofSetColor(red, 120, 200);
-    
-    ofPushMatrix();
-      ofRotateYDeg(mouseX);
-      ofRotateXDeg(mouseY);
-      ofDrawBox(x, y, 0, side, side, side);
-    ofPopMatrix();
-  }
+  if (n < max) {
+    renderBoxes(n);
+    n += diff;
+  } else if (n > 0) {
+    renderBoxes(n);
+    n -= diff;
+  } 
   
-  ++n;
 }
 
 //--------------------------------------------------------------
@@ -50,7 +43,7 @@ void ofApp::keyPressed(int key){
   switch(key){
     case 'q':
       return exit();
-    case '2':
+//    case '2':
 //      return color = ofSetColor(200, 120, 125);
   }
 }
