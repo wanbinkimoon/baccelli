@@ -5,9 +5,10 @@
 class ofApp : public ofBaseApp{
 
 public:
-  int n = 0;
+  int n = 1;
   int c = 10;
   int diff = 1;
+  int max = 1000;
   
   void setup();
   void update();
