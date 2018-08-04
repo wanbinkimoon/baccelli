@@ -140,3 +140,5 @@
 ################################################################################
 # PROJECT_CXX = 
 # PROJECT_CC = 
+# in openFrameworks_0.8.0/libs/openFrameworksCompiled/project/makefileCommon, after line 310
+# rm -rf $(TARGET).app

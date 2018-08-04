@@ -9,7 +9,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+   
 }
 
 //--------------------------------------------------------------
@@ -25,7 +25,7 @@ void ofApp::draw(){
     diff = diff * -1;
   }
   
-  ofNoFill(); ofSetLineWidth(3);
+
   renderBoxes(n);
   n += diff;
 }

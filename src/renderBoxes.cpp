@@ -20,15 +20,23 @@ void ofApp::renderBoxes(int n){
     
     float side = ofMap(i, 0, max, 10, 20);
     
-    int red = i;
+    int red = i % 255;
     int green = ofMap(i, 0, max, 100, 200);
     ofSetColor(red, green, 200);
     
     ofPushMatrix();
-    ofRotateYDeg(mouseX);
-    ofRotateXDeg(mouseY);
+      ofRotateYDeg(mouseX);
+      ofRotateXDeg(mouseY);
+      
 
-    ofDrawBox(x, y, z, side, side, side);
+      ofNoFill(); ofSetLineWidth(1);
+      // ofBox(x, y, z, side);
+      // ofSphere(x, y, z, side);
+      // ofDrawBox(x, y, z, side, side, side);
+
+      ofSetIcoSphereResolution(.5);
+      ofDrawIcoSphere(x, y, z, side);
+
     ofPopMatrix();
   }
 }
